@@ -1,246 +1,165 @@
-# Plan de Régime Alimentaire Équilibré - 7 Jours
+Recommended Dishes According to Different Categories of People
+Adopting a balanced diet does not mean always eating the same things, but knowing how to adapt your meals to your specific needs. Whether the goal is to lose weight, maintain fitness, build muscle mass, or follow a vegetarian or vegan diet, it is essential to focus on variety, fresh products, and a proper distribution of macronutrients.
 
-## Objectifs
-- **Équilibre alimentaire** : Apport optimal en macronutriments et micronutriments
-- **Amélioration de l'énergie** : Stabilisation de la glycémie et optimisation du métabolisme
-- **Contrôle du poids** : Déficit calorique modéré et satiété durable
+Here is a broad selection of dishes suited to different profiles, which everyone can incorporate into their daily routine according to their appetite, physical activity, metabolism, and personal tastes.
 
----
+1. For People Looking to Lose Weight
+The goal here is to promote satiety with foods rich in fiber, lean proteins, healthy fats, and moderate complex carbohydrates. Quick sugars, processed foods are avoided, and a good volume of low-calorie foods is favored.
 
-## JOUR 1 - LUNDI
+Example dishes:
 
-### Petit-déjeuner (7h30)
-- **Avoine complète** (40g) avec lait d'amande (200ml)
-- **Fruits rouges** (100g) : myrtilles, framboises
-- **Amandes** (15g)
-- **Thé vert** ou café sans sucre
+Large quinoa salad with grilled vegetables (eggplant, zucchini, bell peppers), grilled salmon or chicken fillet
 
-### Collation matinale (10h00)
-- **Pomme** (1 moyenne) avec 10g de beurre d'amande
+Marinated and grilled tofu with sautéed broccoli, green beans, and mushrooms, served with millet or quinoa
 
-### Déjeuner (12h30)
-- **Salade de quinoa** (80g cuit) aux légumes grillés
-- **Saumon grillé** (120g)
-- **Avocat** (1/2)
-- **Vinaigrette** : huile d'olive (1 c.à.s) + citron
-- **Eau** (500ml minimum)
+Homemade vegetable soup (zucchini, leek, carrot, fennel) with whole grain bread toasts and avocado
 
-### Collation après-midi (16h00)
-- **Yaourt grec** (150g) nature avec cannelle
-- **Noix** (10g)
+Chickpea bowl with assorted raw vegetables (radish, cucumber, cherry tomatoes), avocado, and pumpkin seeds
 
-### Dîner (19h30)
-- **Poulet grillé** (100g)
-- **Brocolis vapeur** (150g)
-- **Patate douce rôtie** (100g)
-- **Salade verte** avec vinaigrette légère
+Homemade ratatouille with roasted turkey fillet and a small portion of wild rice
 
----
+Stir-fried shrimp with bok choy, shiitake mushrooms, and konjac noodles
 
-## JOUR 2 - MARDI
+Vegetable curry with light coconut milk and a moderate portion of quinoa
 
-### Petit-déjeuner (7h30)
-- **Smoothie vert** : épinards (50g), banane (1), protéine végétale (20g), eau de coco (200ml)
-- **Pain complet** (1 tranche) avec avocat (1/4)
+Steamed white fish with celery root purée and crisp green beans
 
-### Collation matinale (10h00)
-- **Carotte** (1) avec houmous (30g)
+Green lentil salad with crunchy vegetables, hard-boiled egg, lemon-mustard vinaigrette
 
-### Déjeuner (12h30)
-- **Bowl méditerranéen** : 
-  - Riz complet (60g cuit)
-  - Pois chiches (80g)
-  - Tomates cerises (100g)
-  - Concombre (50g)
-  - Feta (30g)
-  - Olives (10g)
+2. For People Looking to Maintain Their Weight
+The goal here is to ensure a nutritionally balanced intake by varying food sources to provide all necessary micronutrients. Culinary pleasure and dish variety play an essential role.
 
-### Collation après-midi (16h00)
-- **Cottage cheese** (100g) avec graines de tournesol (10g)
+Example dishes:
 
-### Dîner (19h30)
-- **Poisson blanc** (120g) au four
-- **Courgettes grillées** (150g)
-- **Quinoa** (50g cuit)
-- **Tisane** digestive
+Buddha bowl with quinoa, seasonal roasted vegetables, avocado, chickpeas, sesame seeds
 
----
+Salmon or trout fillet with basmati rice and sautéed zucchini in olive oil
 
-## JOUR 3 - MERCREDI
+Spinach, mushroom, and fresh herb omelet served with a small green salad
 
-### Petit-déjeuner (7h30)
-- **Œufs brouillés** (2) aux épinards (50g)
-- **Pain complet** (1 tranche)
-- **Tomate** (1 petite)
-- **Thé blanc**
+Whole grain wrap with hummus, chicken breast, assorted raw vegetables, arugula
 
-### Collation matinale (10h00)
-- **Poire** (1) avec amandes (10g)
+Red lentil curry with brown rice and fresh coriander
 
-### Déjeuner (12h30)
-- **Salade de lentilles** (100g cuites)
-- **Légumes croquants** : radis, concombre, poivron
-- **Œuf dur** (1)
-- **Vinaigrette** tahini-citron
+Zucchini and quinoa gratin with herb salad and young greens
 
-### Collation après-midi (16h00)
-- **Smoothie protéiné** : lait végétal (200ml), banane (1/2), protéine (15g)
+Mixed vegetable soup with whole grain bread toasts and homemade guacamole
 
-### Dîner (19h30)
-- **Dinde grillée** (100g)
-- **Ratatouille** (200g)
-- **Riz sauvage** (40g cuit)
+Tofu stir-fry with vegetables and brown rice noodles
 
----
+Quinoa salad with avocado, cucumber, mint, and chickpeas
 
-## JOUR 4 - JEUDI
+3. For People Looking to Gain Muscle Mass
+Here, protein needs increase to support muscle growth, while complex carbohydrates provide sufficient energy. Healthy fats complete the nutritional profile to optimize hormonal function.
 
-### Petit-déjeuner (7h30)
-- **Porridge de sarrasin** (40g) au lait d'avoine
-- **Graines de chia** (10g)
-- **Mangue** (100g)
-- **Café** avec lait végétal
+Example dishes:
 
-### Collation matinale (10h00)
-- **Crackers complets** (2) avec avocat (1/4)
+Grilled chicken breast, quinoa, steamed broccoli
 
-### Déjeuner (12h30)
-- **Wrap complet** avec :
-  - Hummus (30g)
-  - Légumes crus (100g)
-  - Blanc de poulet (80g)
-  - Roquette (50g)
+Lean beef steak with basmati rice and mixed sautéed vegetables
 
-### Collation après-midi (16h00)
-- **Kefir** (150ml) avec baies de goji (10g)
+Baked salmon fillet with whole grain pasta and sautéed zucchini
 
-### Dîner (19h30)
-- **Crevettes sautées** (120g)
-- **Légumes asiatiques** (150g) : pak-choï, champignons
-- **Nouilles de konjac** (100g)
+Red lentil curry, brown rice, chickpeas, and spinach
 
----
+Whole grain wrap with chicken breast, hummus, avocado, assorted raw vegetables
 
-## JOUR 5 - VENDREDI
+Protein pancakes made with oats, eggs, banana, served with berries and almond butter
 
-### Petit-déjeuner (7h30)
-- **Muesli maison** : avoine (30g), noix (15g), graines (5g)
-- **Lait d'amande** (200ml)
-- **Kiwi** (2)
+Tofu stir-fried with tamari, wild rice, sautéed vegetables
 
-### Collation matinale (10h00)
-- **Fromage blanc** (100g) avec concombre
+Porridge with plant-based milk, chia seeds, almond butter, fresh fruit
 
-### Déjeuner (12h30)
-- **Salade de thon** :
-  - Thon au naturel (100g)
-  - Haricots verts (100g)
-  - Tomates (100g)
-  - Œuf dur (1)
-  - Vinaigrette olive-moutarde
+Whole egg omelet, roasted sweet potatoes, green salad
 
-### Collation après-midi (16h00)
-- **Compote** sans sucre (100g) avec cannelle
+4. For Vegetarians
+The challenge here is to balance plant-based proteins, iron, omega-3s, and to vary sources to ensure a good intake of essential amino acids.
 
-### Dîner (19h30)
-- **Tofu grillé** (100g) mariné
-- **Légumes vapeur** (200g)
-- **Millet** (50g cuit)
+Example dishes:
 
----
+Buddha bowl with quinoa, chickpeas, avocado, roasted vegetables, sesame seeds
 
-## JOUR 6 - SAMEDI
+Red lentil curry with coconut milk, basmati rice, and coriander
 
-### Petit-déjeuner (8h00)
-- **Pancakes protéinés** : 
-  - Œuf (1), flocons d'avoine (30g), banane (1/2)
-  - Fruits rouges (80g)
-  - Sirop d'érable (1 c.à.c)
+Zucchini and quinoa gratin with young greens and sunflower seeds
 
-### Collation matinale (10h30)
-- **Smoothie vert** léger
+Whole grain wrap with hummus, raw vegetables, and arugula
 
-### Déjeuner (13h00)
-- **Buddha bowl** :
-  - Quinoa (60g cuit)
-  - Légumes rôtis (150g)
-  - Avocat (1/2)
-  - Graines de sésame (10g)
-  - Sauce tahini
+Oven-baked marinated tofu with millet and steamed vegetables
 
-### Collation après-midi (16h30)
-- **Noix mélangées** (15g)
+Split pea and carrot soup with whole grain bread toasts
 
-### Dîner (20h00)
-- **Saumon** (120g) au four
-- **Légumes méditerranéens** (200g)
-- **Salade** mixte
+Asian vegetable stir-fry with tamari-sautéed tempeh and ginger
 
----
+Tofu scramble with spinach and cherry tomatoes, served with salad
 
-## JOUR 7 - DIMANCHE
+Soba noodles with sautéed vegetables and sesame seeds
 
-### Petit-déjeuner (8h30)
-- **Yaourt grec** (200g)
-- **Granola maison** (30g)
-- **Fruits de saison** (150g)
+5. For Vegans
+In the absence of all animal products, it is crucial to ensure varied plant-based protein intake, plant-based iron, omega-3s (chia seeds, flaxseeds, walnuts), and supplement with vitamin B12.
 
-### Collation matinale (11h00)
-- **Thé** avec biscuit complet (1)
+Example dishes:
 
-### Déjeuner (13h30)
-- **Soupe de légumes** (300ml)
-- **Pain complet** (2 tranches)
-- **Salade d'avocat** et tomate
+Buddha bowl with quinoa, chickpeas, avocado, roasted vegetables, hemp seeds
 
-### Collation après-midi (17h00)
-- **Fruits secs** (20g) et eau
+Vegetable and chickpea curry with coconut milk and brown rice
 
-### Dîner (19h30)
-- **Poisson blanc** (100g)
-- **Purée de céleri** (150g)
-- **Haricots verts** (100g)
+Quinoa salad with cucumber, avocado, mint, coriander, and chickpeas
 
----
+Grilled tofu with wild rice and sautéed green vegetables
 
-## Conseils Généraux
+Red lentil soup with assorted vegetables
 
-### Hydratation
-- **2 à 2,5 litres d'eau** par jour minimum
-- **Thés verts** et tisanes sans sucre
-- **Eau citronnée** le matin à jeun
+Wrap with hummus, avocado, raw vegetables
 
-### Timing des repas
-- **3 repas principaux** + 2 collations
-- **Jeûne nocturne** de 12h minimum
-- **Dernier repas** 3h avant le coucher
+Tofu scramble with spinach and mushrooms, whole grain bread
 
-### Préparation
-- **Meal prep** le dimanche pour la semaine
-- **Portions contrôlées** : utiliser des contenants mesurés
-- **Snacks sains** toujours à portée de main
+Vegan pancakes with banana and oats, served with berries
 
-### Exercice complémentaire
-- **30 minutes d'activité** quotidienne minimum
-- **Musculation** 2-3 fois par semaine
-- **Marche** après les repas principaux
+Buckwheat noodles with marinated tempeh and sautéed vegetables
 
----
+6. For Very Active People (Athletes, Physically Demanding Lifestyle)
+Energy and protein needs are high. Complex carbohydrates, quality proteins, and healthy fats are prioritized, along with proper hydration. Post-workout recovery is essential.
 
-## Exemple de Dîner Équilibré Type
+Example dishes:
 
-### Composition idéale :
-- **Protéines** (25%) : 100-120g de poisson, volaille ou légumineuses
-- **Légumes** (50%) : 200g de légumes variés (cuits et crus)
-- **Glucides complexes** (25%) : 50g de quinoa, riz complet ou patate douce
-- **Bonnes graisses** : 1 c.à.s d'huile d'olive ou 1/4 d'avocat
+Oatmeal porridge with plant-based milk, banana, and almond butter
 
-### Exemple concret :
-**Saumon grillé (120g) + Brocolis vapeur (150g) + Courgettes grillées (100g) + Quinoa (50g cuit) + Salade verte avec vinaigrette à l'huile d'olive (1 c.à.s)**
+Protein pancakes with banana and oats, served with berries
 
-**Valeurs nutritionnelles approximatives :**
-- Calories : 450-500 kcal
-- Protéines : 35g
-- Glucides : 30g
-- Lipides : 20g
-- Fibres : 8g
+Baked salmon, quinoa, sautéed zucchini
+
+Grilled chicken, basmati rice, homemade ratatouille
+
+Tofu stir-fry with Asian vegetables and wild rice
+
+Whole grain wrap with chicken or tempeh, hummus, raw vegetables
+
+Lean ground beef steak, roasted sweet potatoes, mixed vegetable stir-fry
+
+Nutrient-rich Buddha bowl with legumes, seeds, and colorful vegetables
+
+Homemade vegetable soup with whole grain bread toasts and avocado
+
+7. For Sedentary People
+When the lifestyle is more static, energy intake should be moderated while ensuring a diet rich in micronutrients and fiber. Light, digestible meals and a high intake of vegetables are preferred.
+
+Example dishes:
+
+Large quinoa salad with crunchy vegetables and grilled tofu
+
+Mixed vegetable soup with whole grain bread toasts and avocado
+
+Steamed white fish with celery root purée and green beans
+
+Grilled chicken with sautéed zucchini and roasted sweet potatoes
+
+Light Buddha bowl with quinoa, raw vegetables, avocado, chickpeas
+
+Whole grain wrap with raw vegetables and hummus
+
+Vegetable and chickpea curry with a moderate portion of brown rice
+
+Green lentil salad with avocado and fresh vegetables
+
+Oven-baked marinated tofu with steamed vegetables and quinoa
