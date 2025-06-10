@@ -12,27 +12,28 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 
-# Configuration de l'environnement
+# Load environment variables
 load_dotenv()
 
 CHROMA_PATH = "chroma"
 DATA_PATH = "data/books"
 
 PROMPT_TEMPLATE = """
-Vous êtes un assistant diététicien IA expert spécialisé dans la cuisine française et la nutrition.
+You are a professional AI dietitian specialized in healthy eating and nutrition.
 
-Répondez à la question en utilisant uniquement le contexte suivant, qui contient des informations sur les plans alimentaires et les repas :
+Use only the following context, which contains information about dietary plans and meals:
 
 {context}
 
 ---
 
-Répondez à la question en vous basant sur le contexte ci-dessus en français : {question}
+Answer the question in English based on the above context: {question}
 
-Fournissez une réponse détaillée et pratique avec des exemples spécifiques lorsque c'est possible.
+Give a detailed and practical response with specific examples when possible.
 """
 
-# ---------- Fonctions NLP ----------
+# --------- Helper Functions ---------
+
 def load_documents():
     documents = []
     if not os.path.exists(DATA_PATH):
@@ -54,8 +55,7 @@ def load_documents():
 
 def split_text(documents):
     splitter = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=50)
-    chunks = splitter.split_documents(documents)
-    return [chunk for chunk in chunks if chunk.page_content.strip() and len(chunk.page_content) > 20]
+    return [chunk for chunk in splitter.split_documents(documents) if chunk.page_content.strip() and len(chunk.page_content) > 20]
 
 def save_to_chroma(chunks):
     if os.path.exists(CHROMA_PATH):
@@ -76,7 +76,7 @@ def ensure_database():
 
 def query_database(query_text):
     if not ensure_database():
-        return "❌ Aucun document .md trouvé dans le dossier `data/books`.", []
+        return "❌ No markdown files found in the `data/books` directory.", []
 
     try:
         embedding = OpenAIEmbeddings()
@@ -84,14 +84,14 @@ def query_database(query_text):
         results = db.similarity_search_with_relevance_scores(query_text, k=5)
 
         if not results:
-            return "❌ Aucun résultat trouvé pour votre question.", []
+            return "❌ No results found for your question.", []
 
         filtered = [(doc, score) for doc, score in results if score >= 0.6]
         if not filtered:
-            return "❌ Aucun résultat pertinent trouvé.", []
+            return "❌ No relevant results found.", []
 
         context = "\n\n---\n\n".join([doc.page_content for doc, _ in filtered])
-        sources = list(set(os.path.basename(doc.metadata.get("source", "inconnu")) for doc, _ in filtered))
+        sources = list(set(os.path.basename(doc.metadata.get("source", "unknown")) for doc, _ in filtered))
 
         prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
         messages = prompt.format_messages(context=context, question=query_text)
@@ -101,107 +101,59 @@ def query_database(query_text):
         return response.content, sources
 
     except Exception as e:
-        return f"❌ Erreur OpenAI : {e}", []
+        return f"❌ Error: {e}", []
 
-# ---------- Interface Streamlit ----------
-st.set_page_config(page_title="Assistant Nutritionnel", page_icon="🥗")
+# --------- Streamlit UI ---------
 
-# ---------- Style CSS ----------
-st.markdown("""
-<style>
-    body {
-        color: #000;
-    }
-    .response-container {
-        background: #f8f9fa;
-        color: #000 !important;
-        padding: 1.5rem;
-        border-radius: 10px;
-        border-left: 4px solid #667eea;
-        margin: 1rem 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .example-questions {
-        background: #f1f8e9;
-        padding: 1rem;
-        border-radius: 8px;
-        margin: 1rem 0;
-        border: 1px solid #c8e6c9;
-        color: #2e7d32;
-        font-weight: 500;
-    }
-    .sources-container {
-        background: #d0eaff;
-        color: #000;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-        font-size: 0.95rem;
-    }
-    .stTextInput > div > div > input {
-        border-radius: 25px;
-        border: 2px solid #e0e0e0;
-        padding: 0.5rem 1rem;
-    }
-    .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        border-radius: 25px;
-        padding: 0.5rem 2rem;
-        color: white;
-        font-weight: 500;
-        width: 100%;
-    }
-</style>
-""", unsafe_allow_html=True)
+st.set_page_config(page_title="Nutritional Assistant", page_icon="🥗")
 
-# ---------- Titre ----------
+# ---- Header ----
 st.markdown("""
 <div class="header" style="text-align:center;padding:2rem;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:15px;color:white;">
-    <h1>🥗 Assistant Nutritionnel</h1>
-    <p>Votre expert en nutrition personnalisé</p>
+    <h1>🥗 Nutritional Assistant</h1>
+    <p>Your personalized AI nutrition expert</p>
 </div>
 """, unsafe_allow_html=True)
 
-# ---------- Saisie ----------
-st.markdown("### 💬 Posez votre question")
+# ---- Input ----
+st.markdown("### 💬 Ask your question")
 col1, col2 = st.columns([2, 1])
 with col1:
-    query = st.text_input("", placeholder="Ex: Quel est un exemple de dîner équilibré ?", label_visibility="collapsed")
+    query = st.text_input("", placeholder="e.g. What is a balanced dinner?", label_visibility="collapsed")
 with col2:
-    search_button = st.button("🔍 Rechercher")
+    search_button = st.button("🔍 Search")
 
-# ---------- Exemples ----------
+# ---- Example Questions ----
 st.markdown("""
-<div class="example-questions">
-    💡 <strong>Exemples de questions :</strong><br><br>
-    • Que manger pour le petit-déjeuner ?<br>
-    • Quels aliments sont riches en fer ?<br>
-    • Comment composer un repas équilibré ?<br>
-    • Quelles sont les meilleures collations saines ?
+<div class="example-questions" style="background:#f1f8e9;padding:1rem;border-radius:8px;margin:1rem 0;border:1px solid #c8e6c9;color:#2e7d32;font-weight:500;">
+    💡 <strong>Example questions:</strong><br><br>
+    • What should I eat for breakfast?<br>
+    • Which foods are rich in iron?<br>
+    • How to create a balanced meal?<br>
+    • What are some healthy snacks?
 </div>
 """, unsafe_allow_html=True)
 
-# ---------- Résultat ----------
+# ---- Result Display ----
 if search_button and query.strip():
-    with st.spinner("🤔 L'expert analyse votre question..."):
+    with st.spinner("🤔 The assistant is analyzing your question..."):
         response, sources = query_database(query.strip())
-    
-    st.markdown("### 💬 Réponse de l'expert :")
-    st.markdown(f"<div class='response-container'>{response}</div>", unsafe_allow_html=True)
+
+    st.markdown("### 💬 Expert's Response:")
+    st.markdown(f"<div class='response-container' style='background:#f8f9fa;color:#000;padding:1.5rem;border-radius:10px;border-left:4px solid #667eea;margin:1rem 0;box-shadow:0 2px 4px rgba(0,0,0,0.1);'>{response}</div>", unsafe_allow_html=True)
 
     if sources and not response.startswith("❌"):
-        st.markdown("### 📚 Sources consultées :")
+        st.markdown("### 📚 Sources used:")
         st.markdown(f"""
-        <div class='sources-container'>
-            <strong>Fichiers consultés :</strong><br>
+        <div class='sources-container' style='background:#d0eaff;color:#000;padding:1rem;border-radius:8px;margin-top:1rem;font-size:0.95rem;'>
+            <strong>Files consulted:</strong><br>
             {'<br>• '.join([''] + sources)}
         </div>
         """, unsafe_allow_html=True)
 
 elif search_button and not query.strip():
-    st.warning("⚠️ Veuillez saisir une question avant de rechercher.")
+    st.warning("⚠️ Please enter a question before searching.")
 
-# ---------- Footer ----------
+# ---- Footer ----
 st.markdown("---")
-st.markdown("<div style='text-align: center; color: #666; padding: 1rem;'>🥗 Assistant Nutritionnel - Propulsé par l'IA</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; color: #666; padding: 1rem;'>🥗 Nutritional Assistant - Powered by AI</div>", unsafe_allow_html=True)
