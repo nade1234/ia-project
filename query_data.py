@@ -37,61 +37,61 @@ def main():
     args = parser.parse_args()
     query_text = args.query_text
 
-    if not os.path.exists(CHROMA_PATH):
-        print(f" Database not found at {CHROMA_PATH}. Please run create_database.py first.")
+    if not os.path.exists(CHROMA_PATH) or not os.listdir(CHROMA_PATH):
+        print(f"❌ No vector store found in '{CHROMA_PATH}'. Please run the Streamlit app at least once to generate it.")
         return
 
     try:
         embedding_function = OpenAIEmbeddings()
         db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
-        print(" Database loaded successfully")
+        print("✅ Database loaded successfully.")
     except Exception as e:
-        print(f" Error loading database: {e}")
+        print(f"❌ Error loading database: {e}")
         return
 
     print(f"\n🔍 Searching for relevant context for: \"{query_text}\"\n")
-        
+
     try:
         results = db.similarity_search_with_relevance_scores(query_text, k=5)
         print(f"Found {len(results)} potential results")
     except Exception as e:
-        print(f" Error during search: {e}")
+        print(f"❌ Error during search: {e}")
         return
 
     if len(results) == 0:
-        print(f" No matching results found for: '{query_text}'")
+        print(f"❌ No matching results found for: '{query_text}'")
         return
 
     filtered_results = [(doc, score) for doc, score in results if score >= 0.6]
 
     if len(filtered_results) == 0:
-        print(f" No results with relevance score >= 0.6.")
+        print(f"❌ No results with relevance score >= 0.6.")
         return
 
-    print(f" Found {len(filtered_results)} relevant results")
+    print(f"✅ Found {len(filtered_results)} relevant results")
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _ in filtered_results])
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=query_text)
 
-    print("\n Generating response...")
-    
+    print("\n🧠 Generating response...")
+
     try:
         model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.2, max_tokens=500)
         response = model.invoke(prompt)
         response_text = response.content
     except Exception as e:
-        print(f" Error generating response: {e}")
+        print(f"❌ Error generating response: {e}")
         return
 
     sources = [doc.metadata.get("source", "unknown") for doc, _ in filtered_results]
-    
+
     print("\n" + "="*60)
     print("ANSWER:")
     print("="*60)
     print(response_text)
     print("\n" + "="*60)
-    print(" SOURCES:")
+    print("SOURCES:")
     print("="*60)
     for i, source in enumerate(set(sources), 1):
         print(f"{i}. {source}")

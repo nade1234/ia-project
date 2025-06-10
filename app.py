@@ -64,7 +64,7 @@ def save_to_chroma(chunks):
     Chroma.from_documents(chunks, embedding, persist_directory=CHROMA_PATH)
 
 def ensure_database():
-    if not os.path.exists(CHROMA_PATH):
+    if not os.path.exists(CHROMA_PATH) or not os.listdir(CHROMA_PATH):
         docs = load_documents()
         if not docs:
             return False
