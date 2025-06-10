@@ -1,5 +1,19 @@
+# Virtual environment
+venv/
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Environnement
 .env
-chroma_*
-chroma
+.env.*
+
+# MacOS & Windows
 .DS_Store
-env/
+Thumbs.db
