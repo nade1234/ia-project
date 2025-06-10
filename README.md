@@ -1,27 +1,18 @@
+#  Nutritional Assistant – AI-Powered Diet Expert
 
-
-This project is an AI-powered **diet assistant** for French cuisine and nutrition.  
-It allows you to query a collection of dietary plans and meals using natural language, powered by:
-
--  A vector database (Chroma)
--  OpenAI Embeddings and Chat Models
--  Markdown documents as data sources
-
-## Features
-
-Load French dietary plans from `.md` files  
- Create a local vector database (Chroma)  
- Query the database in natural language (French)  
-Get practical and detailed responses  
+Un assistant intelligent pour répondre à vos questions sur la nutrition, l’alimentation saine et les plans diététiques personnalisés. Basé sur **LangChain**, **OpenAI**, **ChromaDB** et **Streamlit**.
 
 ---
 
-## Project Structure
+##  Fonctionnalités
 
-- `create_database.py` — Creates the vector database from your documents  
-- `query_database.py` — Query the database with your questions  
-- `data/books/*.md` — Your source Markdown documents  
-- `chroma/` — The generated local vector database (auto-created)
+- 📄 Ingestion automatique des fichiers `.md` depuis le dossier `data/books`
+- 🧠 Génération d'embeddings une seule fois (avec OpenAI)
+- 🔍 Recherche sémantique dans la base Chroma
+- 💬 Interface web conviviale via Streamlit
+- ✅ Réponses précises avec des exemples pratiques
+- 📚 Affichage des sources utilisées
+
 
 
 
