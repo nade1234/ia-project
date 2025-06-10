@@ -43,16 +43,16 @@ def main():
 
     # Check if database exists
     if not os.path.exists(CHROMA_PATH):
-        print(f"❌ Database not found at {CHROMA_PATH}. Please run create_database.py first.")
+        print(f" Database not found at {CHROMA_PATH}. Please run create_database.py first.")
         return
 
     # Prepare the DB.
     try:
         embedding_function = OpenAIEmbeddings()
         db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
-        print("✅ Database loaded successfully")
+        print(" Database loaded successfully")
     except Exception as e:
-        print(f"❌ Error loading database: {e}")
+        print(f" Error loading database: {e}")
         return
 
     # Search the DB.
@@ -62,25 +62,25 @@ def main():
         results = db.similarity_search_with_relevance_scores(query_text, k=5)
         print(f"Found {len(results)} potential results")
     except Exception as e:
-        print(f"❌ Error during search: {e}")
+        print(f" Error during search: {e}")
         print("This usually means the database is corrupted. Try recreating it with create_database.py")
         return
 
     if len(results) == 0:
-        print(f"❌ Unable to find any matching results for: '{query_text}'")
+        print(f" Unable to find any matching results for: '{query_text}'")
         return
 
     # Filter out results with low relevance score (< 0.6 for more flexibility).
     filtered_results = [(doc, score) for doc, score in results if score >= 0.6]
 
     if len(filtered_results) == 0:
-        print(f"❌ No results with sufficient relevance score found (threshold: 0.6).")
+        print(f" No results with sufficient relevance score found (threshold: 0.6).")
         print("\n📋 Available results with lower scores:")
         for i, (doc, score) in enumerate(results[:3], 1):
             print(f"  {i}. Score: {score:.3f} - {doc.page_content[:150]}...")
         return
 
-    print(f"✅ Found {len(filtered_results)} relevant results")
+    print(f" Found {len(filtered_results)} relevant results")
     
     # Show relevance scores
     for i, (doc, score) in enumerate(filtered_results, 1):
@@ -90,7 +90,7 @@ def main():
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=query_text)
 
-    print("\n🤖 Generating response...")
+    print("\n Generating response...")
     
     try:
         model = ChatOpenAI(
@@ -104,17 +104,17 @@ def main():
         response_text = response.content
         
     except Exception as e:
-        print(f"❌ Error generating response: {e}")
+        print(f" Error generating response: {e}")
         return
 
     sources = [doc.metadata.get("source", "unknown") for doc, _score in filtered_results]
     
     print("\n" + "="*60)
-    print("📝 RÉPONSE:")
+    print("RÉPONSE:")
     print("="*60)
     print(response_text)
     print("\n" + "="*60)
-    print("📚 SOURCES:")
+    print(" SOURCES:")
     print("="*60)
     for i, source in enumerate(set(sources), 1):
         print(f"{i}. {source}")
