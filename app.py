@@ -1,38 +1,23 @@
 # -*- coding: utf-8 -*-
-import streamlit as st
 import os
 import shutil
 import glob
+import streamlit as st
 from dotenv import load_dotenv
 
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
 
-# Load environment variables
+# --------- Config ---------
 load_dotenv()
-
 CHROMA_PATH = "chroma"
 DATA_PATH = "data/books"
 
-PROMPT_TEMPLATE = """
-You are a professional AI dietitian specialized in healthy eating and nutrition.
-
-Use only the following context, which contains information about dietary plans and meals:
-
-{context}
-
----
-
-Answer the question in English based on the above context: {question}
-
-Give a detailed and practical response with specific examples when possible.
-"""
-
-# --------- Helper Functions ---------
+# --------- Document Handling ---------
 
 def load_documents():
     documents = []
@@ -74,34 +59,26 @@ def ensure_database():
         save_to_chroma(chunks)
     return True
 
-def query_database(query_text):
+# --------- Chain Setup with Memory ---------
+
+@st.cache_resource(show_spinner=False)
+def load_chain():
     if not ensure_database():
-        return "❌ No markdown files found in the `data/books` directory.", []
+        return None, None
 
-    try:
-        embedding = OpenAIEmbeddings()
-        db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding)
-        results = db.similarity_search_with_relevance_scores(query_text, k=5)
+    embedding = OpenAIEmbeddings()
+    vectordb = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding)
+    retriever = vectordb.as_retriever(search_kwargs={"k": 5})
 
-        if not results:
-            return "❌ No results found for your question.", []
+    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
-        filtered = [(doc, score) for doc, score in results if score >= 0.6]
-        if not filtered:
-            return "❌ No relevant results found.", []
-
-        context = "\n\n---\n\n".join([doc.page_content for doc, _ in filtered])
-        sources = list(set(os.path.basename(doc.metadata.get("source", "unknown")) for doc, _ in filtered))
-
-        prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-        messages = prompt.format_messages(context=context, question=query_text)
-
-        model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.2)
-        response = model.invoke(messages)
-        return response.content, sources
-
-    except Exception as e:
-        return f"❌ Error: {e}", []
+    qa_chain = ConversationalRetrievalChain.from_llm(
+        llm=ChatOpenAI(model="gpt-3.5-turbo", temperature=0.2),
+        retriever=retriever,
+        memory=memory,
+        verbose=False
+    )
+    return qa_chain, memory
 
 # --------- Streamlit UI ---------
 
@@ -134,26 +111,27 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- Result Display ----
+# ---- Response Area ----
 if search_button and query.strip():
-    with st.spinner("🤔 The assistant is analyzing your question..."):
-        response, sources = query_database(query.strip())
+    qa_chain, memory = load_chain()
 
-    st.markdown("### 💬 Expert's Response:")
-    st.markdown(f"<div class='response-container' style='background:#f8f9fa;color:#000;padding:1.5rem;border-radius:10px;border-left:4px solid #667eea;margin:1rem 0;box-shadow:0 2px 4px rgba(0,0,0,0.1);'>{response}</div>", unsafe_allow_html=True)
+    if not qa_chain:
+        st.error("❌ No markdown files found in the `data/books` directory.")
+    else:
+        with st.spinner("🤔 The assistant is analyzing your question..."):
+            result = qa_chain({"question": query.strip()})
+            response = result["answer"]
 
-    if sources and not response.startswith("❌"):
-        st.markdown("### 📚 Sources used:")
-        st.markdown(f"""
-        <div class='sources-container' style='background:#d0eaff;color:#000;padding:1rem;border-radius:8px;margin-top:1rem;font-size:0.95rem;'>
-            <strong>Files consulted:</strong><br>
-            {'<br>• '.join([''] + sources)}
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("### 💬 Expert's Response:")
+        st.markdown(f"<div class='response-container' style='background:#f8f9fa;color:#000;padding:1.5rem;border-radius:10px;border-left:4px solid #667eea;margin:1rem 0;box-shadow:0 2px 4px rgba(0,0,0,0.1);'>{response}</div>", unsafe_allow_html=True)
+
+        with st.expander("🕘 Conversation history"):
+            for msg in memory.chat_memory.messages:
+                st.markdown(f"**{msg.type.capitalize()}:** {msg.content}")
 
 elif search_button and not query.strip():
     st.warning("⚠️ Please enter a question before searching.")
 
 # ---- Footer ----
 st.markdown("---")
-st.markdown("<div style='text-align: center; color: #666; padding: 1rem;'>🥗 Nutritional Assistant - Powered by AI</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; color: #666; padding: 1rem;'>🥗 Nutritional Assistant - Powered by AI & LangChain</div>", unsafe_allow_html=True)
