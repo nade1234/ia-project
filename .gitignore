@@ -1,19 +1,10 @@
-# Virtual environment
-venv/
-
-# VS Code
-.vscode/
-
-# Python
+# Dossiers à ignorer
+chroma/
+env/
+.venv/
 __pycache__/
-*.py[cod]
-*.sqlite3
-*.log
-
-# Environnement
+*.pyc
+*.pkl
+*.db
 .env
-.env.*
-
-# MacOS & Windows
-.DS_Store
-Thumbs.db
+git add .gitignore

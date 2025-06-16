@@ -1,18 +1,33 @@
-#  Nutritional Assistant – AI-Powered Diet Expert
+# 🥗 AI Nutritional Assistant
 
-Un assistant intelligent pour répondre à vos questions sur la nutrition, l’alimentation saine et les plans diététiques personnalisés. Basé sur **LangChain**, **OpenAI**, **ChromaDB** et **Streamlit**.
+This is an AI-powered nutritional assistant built with [Streamlit], [LangChain]
+, [OpenAI], and [MongoDB]. It gives personalized nutrition advice based on:
+
+- Your **weight**, **job**, and **physical activity**
+- **Stored chat history**
+- Your **previous goals** (e.g. weight loss, gain)
+- Embedded **.md files** for nutrition knowledge (via vector search with Chroma)
 
 ---
 
-##  Fonctionnalités
+## 🚀 Features
 
-- 📄 Ingestion automatique des fichiers `.md` depuis le dossier `data/books`
-- 🧠 Génération d'embeddings une seule fois (avec OpenAI)
-- 🔍 Recherche sémantique dans la base Chroma
-- 💬 Interface web conviviale via Streamlit
-- ✅ Réponses précises avec des exemples pratiques
-- 📚 Affichage des sources utilisées
+- Chat interface (Streamlit) with memory
+- Personalized responses using OpenAI LLM
+- Persistent vector database (Chroma)
+- MongoDB integration to store:
+  - User profiles
+  - Chat history
+- Auto-detection of missing info (weight, job, sport)
+- Support for multiple users
+- Embeddings created once and reused
 
+---
 
+## 📦 Installation
 
+### 1. Clone the repo
 
+```bash
+git clone https://github.com/your-username/nutritional-assistant.git
+cd nutritional-assistant
