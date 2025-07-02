@@ -1,0 +1,32 @@
+# Load environment variables from .env file
+python-dotenv==1.0.1
+
+# Langchain core + integrations
+langchain==0.2.2
+langchain-community==0.2.3
+langchain-openai>=0.1.8,<0.2.0
+
+# Text processing, document loading
+unstructured==0.14.4  # Required for document parsing
+nltk==3.8.1  # Used for sentence tokenization
+tiktoken==0.7.0  # Tokenizer for OpenAI embeddings
+
+# Vector store for similarity search
+# ⚠️ Important: install onnxruntime **before** chromadb if you're not on Linux
+# On Mac:     conda install onnxruntime -c conda-forge
+# On Windows: install Microsoft C++ Build Tools first (for onnxruntime)
+chromadb==0.5.0
+
+# OpenAI API access
+openai>=1.26.0,<2.0.0
+
+# Web interface
+streamlit==1.35.0  # Or latest compatible version
+
+# Optional: for better markdown support in unstructured
+# Install separately with: pip install "unstructured[md]"
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pymongo==4.6.0
+python-multipart==0.0.6
