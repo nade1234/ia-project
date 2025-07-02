@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nutritional_backend
+    ports:
+      - "8000:8000"
+    environment:
+      # Your secrets & config
+      OPENAI_API_KEY=***REMOVED***
+      MONGO_USER: jouininade123
+      MONGO_PASS: kookie123
+      MONGO_HOST: cluster0.xr9k99n.mongodb.net
+      MONGO_DB: nutritional_assistant
+      MONGO_COLLECTION: user_info_records
+      DATA_PATH: /data/books
+      CHROMA_PATH: /chroma
+
+      # 👇 Prevent Docker from inheriting your host’s proxy variables
+      HTTP_PROXY: ""
+      HTTPS_PROXY: ""
+      NO_PROXY: "*"
+    volumes:
+      - ./data/books:/data/books   # <-- mount your Markdown files
+      - ./chroma:/chroma           # <-- persist Chroma DB across restarts
+
+
+  frontend:
+    build:
+      context: ./fronted
+      dockerfile: Dockerfile
+    container_name: nutritional_frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    environment:
+      API_URL: http://backend:8000
