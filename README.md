@@ -1,6 +1,6 @@
 # 🥗 AI Nutritional Assistant
 
-An AI-powered nutritional assistant built with **Streamlit**, **LangChain**, **OpenAI**, and **MongoDB**.
+An AI-powered nutritional assistant built with **FastAPI**, **Streamlit**, **LangChain**, **OpenAI**, and **MongoDB**.
 
 It provides personalized nutrition advice based on:
 - Your weight, job, and physical activity
@@ -11,6 +11,7 @@ It provides personalized nutrition advice based on:
 ## 🚀 Features
 
 - 🗨️ **Chat interface** (Streamlit) with conversational memory
+- ⚡ **RESTful API** (FastAPI) for backend processing
 - 🤖 **Personalized responses** with OpenAI LLM
 - 📚 **Knowledge embeddings** stored in Chroma (created once and reused)
 - 🗄️ **MongoDB integration** to store:
@@ -18,6 +19,16 @@ It provides personalized nutrition advice based on:
   - Chat history
 - 🔍 **Auto-detection** of missing info (weight, job, sport)
 - 👥 **Multi-user support**
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    A[Streamlit Frontend] --> B[FastAPI Backend];
+    B --> C[OpenAI LLM];
+    B --> D[MongoDB];
+    B --> E[Chroma Vector DB];
+    F[Knowledge Base] --> E;
 
 ## 📸 Screenshots
 
