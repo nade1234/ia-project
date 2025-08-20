@@ -31,6 +31,7 @@ graph TD
     F[Knowledge Base] --> E;
 
 
+
 ## 📸 Screenshots
 🔹 Registration & Profile Setup
 https://assets/registration.jpg
