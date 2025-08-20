@@ -29,18 +29,20 @@ graph TD
     B --> D[MongoDB];
     B --> E[Chroma Vector DB];
     F[Knowledge Base] --> E;
+```
+
 
 
 
 ## 📸 Screenshots
-🔹 Registration & Profile Setup
-https://assets/registration.jpg
+🔹 Registration & Profile Setup  
+![Registration](assets/registration.jpg)
 
-🔹 AI Chat Interface
-https://assets/chat.jpg
+🔹 AI Chat Interface  
+![Chat](assets/chat.jpg)
 
-🔹 Nutrition Goals & History
-https://assets/goals.jpg
+🔹 Nutrition Goals & History  
+![Goals](assets/goals.jpg)
 
 
 ## 📦 Installation
