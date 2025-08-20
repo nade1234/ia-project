@@ -33,13 +33,13 @@ graph TD
 ## 📸 Screenshots
 
 ### 🔹 Registration & Profile Setup
-![Nutrition Goals & History](assets/goals.jpg)
+![Registration & Profile Setup](assets/registration.jpg)
 
 ### 🔹 AI Chat Interface  
 ![AI Chat Interface](assets/chat.jpg)
 
 ### 🔹 Nutrition Goals & History
-![Registration & Profile Setup](assets/registration.jpg)
+![Nutrition Goals & History](assets/goals.jpg)
 
 
 ## 📦 Installation
