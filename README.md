@@ -30,16 +30,16 @@ graph TD
     B --> E[Chroma Vector DB];
     F[Knowledge Base] --> E;
 
+
 ## 📸 Screenshots
+🔹 Registration & Profile Setup
+https://assets/registration.jpg
 
-### 🔹 Registration & Profile Setup
-![Registration & Profile Setup](assets/registration.jpg)
+🔹 AI Chat Interface
+https://assets/chat.jpg
 
-### 🔹 AI Chat Interface  
-![AI Chat Interface](assets/chat.jpg)
-
-### 🔹 Nutrition Goals & History
-![Nutrition Goals & History](assets/goals.jpg)
+🔹 Nutrition Goals & History
+https://assets/goals.jpg
 
 
 ## 📦 Installation
