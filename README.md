@@ -22,13 +22,14 @@ It provides personalized nutrition advice based on:
 ## 📸 Screenshots
 
 ### 🔹 Registration & Profile Setup
-![Registration & Profile Setup](assets/registration.jpg)
+![Nutrition Goals & History](assets/goals.jpg)
 
 ### 🔹 AI Chat Interface  
 ![AI Chat Interface](assets/chat.jpg)
 
 ### 🔹 Nutrition Goals & History
-![Nutrition Goals & History](assets/goals.jpg)
+![Registration & Profile Setup](assets/registration.jpg)
+
 
 ## 📦 Installation
 
